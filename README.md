@@ -5,7 +5,7 @@ Upload one or more PDF files.
 The API stores metadata and extracts plain text using **PyMuPDF (fitz)**.  
 It returns `document_id` for each uploaded contract.
 
-2. Extract (POST /extract)
+### 2. Extract (POST /extract)
 
 Given a document_id, it extracts and returns structured fields like:
 
@@ -32,13 +32,13 @@ liability_cap (number + currency)
 signatories[]
 
 
-3. Ask (POST /ask)
+### 3. Ask (POST /ask)
 
 Ask a question about the uploaded contract.
 The answer is generated using simple keyword search within the stored document text (simulating a RAG approach).
 
 
-4. Audit (POST /audit)
+### 4. Audit (POST /audit)
 
 Performs rule-based checks to detect risky clauses, such as:
 
@@ -49,11 +49,11 @@ Unlimited liability
 Broad indemnity clauses
 
 
-5. Stream (GET /ask/stream)
+### 5. Stream (GET /ask/stream)
 
 Simulated streaming (SSE/WebSocket-style) for live token output when asking a question.
 
-6. Admin Routes
+### 6. Admin Routes
 
 GET /healthz → Health check
 
@@ -94,3 +94,4 @@ Master Service Agreement Sample
 Terms of Service Template
 
 Put them inside a /sample_contracts folder to test ingestion.
+
